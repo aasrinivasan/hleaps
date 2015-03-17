@@ -869,8 +869,18 @@ format.output  <- function(minSize, maxSize, nbest, altOut, method, colAssign, d
 #
 #' @export
 hleapsApproxTime = function(n, p, int, sigI, sigC){
+  x1  <- rnorm(100000)
+  x2  <- rnorm(100000)
+  x3  <- rnorm(100000)
+  x4  <- rnorm(100000)
+  y  <- rnorm(100000)
+  timeStart = proc.time()
+  hleapsOut  <- hleaps(y~(x1+x2+x3+x4)^2, altOut = TRUE)
+  timeEnd = proc.time()
   
-  time = 7.135*(10^-7) * n + .01872 * p^2 + .0824 * p + -1.492* int + -2.252 * sigI + 1.563 * sigC  - .28781
+  timeElapsed = timeEnd[3] - timeStart[3]
+  timeElapsed = as.numeric(timeElapsed)
+  time = (7.135*(10^-7) * n + .01872 * p^2 + .0824 * p + -1.492* int + -2.252 * sigI + 1.563 * sigC  - .28781) * (timeElapsed / 7)
   time = exp(1)^time
 
   days = time/(24*60*60)
