@@ -72,7 +72,7 @@ hleaps  <- function (formula,
         mf   <- mf[c(1L, m)]
         mf$drop.unused.levels <- TRUE
         mf[[1L]] <- as.name("model.frame")
-        mf   <- eval(mf, parent.frame())
+        mf   <- eval(mf, sys.parent(n=2))
         atts <- attributes(terms(mf))
         inci <- crossprod(atts$factor) == atts$order # incidence matrix for terms
         mods <- array(FALSE, c(nrow(inci), 1))
@@ -550,15 +550,10 @@ hleaps  <- function (formula,
       mf   <- match.call(expand.dots = TRUE)
       m    <- match(c("formula", "data", "subset", "weights", "na.action", 
                       "offset"), names(mf), 0L)
-      
-      mf1  <- mf
-      
       hp   <- mf[c(1L, m)]
       hp$drop.unused.levels <- TRUE
       hp[[1L]] <- as.name("hpmodsetup")
       hp   <- eval(hp)
-      
-      
       mods  <- hp$models
       X  <- hp$X
       colAssign <-  attr(X,"assign")
@@ -868,7 +863,7 @@ format.output  <- function(minSize, maxSize, nbest, altOut, method, colAssign, d
 # approximate hleaps time to run
 #
 #' @export
-hleapsApproxTime = function(n, p, int, sigI, sigC){
+hleapsApproxTime = function(n=1000, p=10, int=TRUE, sigI=TRUE, sigC=TRUE){
   x1  <- rnorm(100000)
   x2  <- rnorm(100000)
   x3  <- rnorm(100000)

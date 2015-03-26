@@ -151,8 +151,10 @@ x4  <- rnorm(100)
 y  <- rnorm(100)
 
 # Example method with alternative output
-hleapsOut  <- hleaps(y~(x1+x2+x3+x4)^2, altOut = TRUE)
+hleapsOutAlt  <- hleaps(y~(x1+x2+x3+x4)^2, altOut = TRUE)
 
+# Example method with standard leaps output
+hleapsOutStandard  <- hleaps(y~(x1+x2+x3+x4)^2, altOut = FALSE)
 }
 
 % Add one or more standard keywords, see file 'KEYWORDS' in the
