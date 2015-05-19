@@ -77,23 +77,16 @@ An object of class list.
 }
 }
 }
-\references{
-%% ~put references to the literature/web site here ~
-}
+
 \author{
 Arun Srinivasan <aasrinivasan@wisc.edu>
 }
-\note{
-%%  ~~further notes~~
-}
+
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
 \examples{
-hleapsApproxTime(1000, 18, TRUE, FALSE, FALSE)
+hleapsApproxTime(1000, 10, TRUE, FALSE, FALSE)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

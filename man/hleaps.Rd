@@ -10,7 +10,9 @@ The search criteria for best fit can be R^2, adjusted R^2, AIC, and BIC.
 the best models for each size of models are reported.
 }
 \usage{
-hleaps(formula, data, method = "adjr2", nbest = 3, minSize = NULL, maxSize = NULL, timeOut = NULL, altOut = FALSE, mem = 2, ...)
+hleaps(formula, data, method = "adjr2", nbest = 3, 
+        minSize = NULL, maxSize = NULL, timeOut = NULL, 
+        altOut = FALSE, mem = 2, ...)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -126,21 +128,10 @@ For  altOut = TRUE
 }
 }
 }
-\references{
-%% ~put references to the literature/web site here ~
-}
 \author{
 Mark Banghart <mbanghart@ssc.wisc.edu>, Douglas Bates, Arun Srinivasan <ara.arun@gmail.com>
 }
-\note{
-%%  ~~further notes~~
-}
 
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
 \examples{
 
 set.seed(21564)

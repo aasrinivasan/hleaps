@@ -864,11 +864,11 @@ format.output  <- function(minSize, maxSize, nbest, altOut, method, colAssign, d
 #
 #' @export
 hleapsApproxTime = function(n=1000, p=10, int=TRUE, sigI=TRUE, sigC=TRUE){
-  x1  <- rnorm(100000)
-  x2  <- rnorm(100000)
-  x3  <- rnorm(100000)
-  x4  <- rnorm(100000)
-  y  <- rnorm(100000)
+  x1  <- rnorm(10000)
+  x2  <- rnorm(10000)
+  x3  <- rnorm(10000)
+  x4  <- rnorm(10000)
+  y  <- rnorm(10000)
   timeStart = proc.time()
   hleapsOut  <- hleaps(y~(x1+x2+x3+x4)^2, altOut = TRUE)
   timeEnd = proc.time()

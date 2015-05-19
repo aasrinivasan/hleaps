@@ -2,9 +2,10 @@ Package: hleaps
 Type: Package
 Title: Hierarchy Supporting Ordinary Least Squares
 Version: 1.0
-Date: 2014-07-22
+Date: 2015-05-19
 Author: Mark Banghart, Douglas Bates, Arun Srinivasan
 Maintainer: Mark Banghart <mbanghart@ssc.wisc.edu>
-Description: Exhaustive search of hierarchy supporting ordinary least squares
-    models
+Description: Hleaps performs an exhaustive search of hierarchy supporting
+    ordinary least squares models to determine the best subsets of provided
+    terms.
 License: GPL (>= 2)
