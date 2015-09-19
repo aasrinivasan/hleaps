@@ -17,16 +17,21 @@ hleaps(formula, data, method = "adjr2", nbest = 3,
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{formula}{
-a fomula <this should be alink to the formula page> object or a character scalar which can be coereced to formula object.
+a \code{\link{formula}} object or a character
+scalar which can be coereced to formula object.
 }
   \item{data}{
-an object of class data.frame - an optional data frame containing the variables named in formula. By default the variables are taken from the environment from which hleaps is called.
+an object of class \code{\link{data.frame}} - an optional data frame containing the 
+variables named in formula. By default the variables are taken from the 
+environment from which hleaps is called.
 }
   \item{method}{
-a character scalar - criteria to be used for best model selection. The valid set of model selection criteria is \dQuote{RSS}, \dQuote{r2}, \dQuote{adjr2}, \dQuote{AIC}, and \dQuote{BIC}.
+a \code{\link{character}} scalar - criteria to be used for best model selection. The valid set 
+of model selection criteria is \dQuote{RSS}, \dQuote{r2}, 
+\dQuote{adjr2}, \dQuote{AIC}, and \dQuote{BIC}.
 }
   \item{nbest}{
-an integer scalar - number of best models per size model where size is the
+an \code{\link{integer}} scalar - number of best models per size model where size is the
 number of model terms.
 }
   \item{minSize}{
@@ -38,17 +43,19 @@ integer scalar - largest size of model to be reported.
 NULL defaults to the number of terms specified in the formula parameter.
 }
 \item{timeOut}{
-a numeric scalar - number of seconds to after which the search for models is terminated. 
+a \code{\link{numeric}} scalar - number of seconds to after which the search for models is terminated. 
 NULL defaults to Inf.
 }
   \item{altOut}{
 a logical scalar - TRUE indicates a request for the alternate returned object.
 }
   \item{mem}{
-a numeric scalar - identifies the amount of memory, measured in gig, available for the the hleap function.
+a numeric scalar - identifies the amount of memory, measured in gig, 
+available for the the hleap function.
 }
   \item{\dots}{
-other potential arguments. These are arguments which would be passed to lm such as weights, subsets, etc.
+other potential arguments. These are arguments which would be passed to lm such as
+weights, subsets, etc.
 }
 }
 \details{
@@ -82,9 +89,7 @@ If the algorithm needs more memory than what the mem
 parameter states is available, an error message is produced 
 and the function stops.
 
-
-
-offsets are assumed to be in the column space of the X matrix by lm and summary.lm.
+Offsets are assumed to be in the column space of the X matrix by lm and summary.lm.
 The use of offsets which remove a column of the X matrix in algorithm which 
 searches all models requires care.
 hleaps will consider models which will result in the offsets is not in the column
@@ -95,7 +100,7 @@ If one has an application of offset which is not in the column space of X,
 hleaps will correctly prefrom the search based on R^2 or adjusted R^2.
 }
 \value{
-An object of class list.
+An object of class \code{\link{list}}.
 
 For the altOut = FALSE
 \itemize{
@@ -103,7 +108,7 @@ For the altOut = FALSE
 - a logical matrix. Each row can be used to select the columns of x in the respective model. The logical matrix includes
 }
 \item{size} {
-- an integer vector. The number of variables, including intercept if any, in the model
+- an integer \code{\link{vector}}. The number of variables, including intercept if any, in the model
 }
 \item{\dQuote{RSS}, \dQuote{r2}, \dQuote{adjr2}, \dQuote{AIC}, or \dQuote{BIC}} {
 - a numeric vector lists the value of the chosen model selection statistic for each model
